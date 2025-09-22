@@ -1,0 +1,177 @@
+/* Giriş ekranı için gerekli olan stil */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 99999;
+    cursor: pointer;
+    transition: opacity 1s ease-in-out;
+}
+
+.intro-text {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#intro-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Genel sayfa ve video stilleri */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#video-bg {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Merkezdeki şeffaf kutu ve içindeki elemanlar için yeni düzen */
+.center-box {
+    background: rgba(0, 0, 0, 0.4); 
+    padding: 30px; /* Kenar boşluklarını düşürdük */
+    border-radius: 15px;
+    backdrop-filter: blur(10px); 
+    position: relative;
+    
+    /* Flexbox ile tüm içeriği dikey olarak düzenle */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Elemanlar arasına boşluk bırakır */
+    width: 500px;
+}
+
+/* Profil resmi stilleri */
+.profile-picture {
+    border-radius: 50%; 
+    border: 3px solid white; 
+    object-fit: cover; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.main-profile {
+    width: 100px; 
+    height: 100px; 
+    position: absolute; 
+    top: -50px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Yeni eklenen resim için stil */
+.new-image {
+    max-width: 100%; /* Kutu genişliğinden daha büyük olamaz */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    margin-top: 60px; /* Profil resmi ve resim arasındaki boşluk */
+}
+
+/* Yazı stilleri */
+.logo {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #ccc;
+    margin-top: 0;
+}
+
+/* Sosyal medya linkleri */
+.social-links {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.social-link:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.social-media-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Görüntülenme sayısı */
+.views {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #aaa;
+}
